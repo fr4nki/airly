@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, memo, useMemo } from 'react';
 import { nanoid } from 'nanoid';
 
 import * as styles from './styles';
@@ -16,7 +16,14 @@ const Liner: FC<Props> = ({
   height,
   step = 10,
 }) => {
-  const lineArray = new Array(Math.floor(height / (step + SEPARATOR_LINE_THICKNESS))).fill('');
+  const lines = useMemo(
+    (): string[] => {
+      const length = Math.floor(height / (step + SEPARATOR_LINE_THICKNESS));
+
+      return Array.from({ length }, () => nanoid(32));
+    },
+    [step, height],
+  );
 
   return (
     <div {...{
@@ -24,9 +31,9 @@ const Liner: FC<Props> = ({
       css: styles.liner,
     }}>
       {
-        lineArray.map(() => (
+        lines.map((key) => (
           <span {...{
-            key: nanoid(),
+            key,
             css: styles.linerLine(SEPARATOR_LINE_THICKNESS),
             style: { marginTop: step },
           }} />

@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import {FC, memo, useMemo} from 'react';
 
 import Liner from '@/components/liner';
 

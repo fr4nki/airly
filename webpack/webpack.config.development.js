@@ -79,13 +79,6 @@ module.exports = {
         configFile: globalConfig.helpers.fromSource('../tsconfig.json'),
         context: globalConfig.helpers.fromSource('../'),
       },
-      eslint: {
-        enabled: true,
-        files: [
-          globalConfig.helpers.fromSource('**/*.ts'),
-          globalConfig.helpers.fromSource('**/*.tsx'),
-        ],
-      }
     }),
 
     new webpack.DefinePlugin({
