@@ -1,39 +1,25 @@
 import { FC, memo } from 'react';
 
-import { useUserStylesStore } from '@/stores/userStyles';
+import Dropdown from '@/components/dropdown';
 
 interface Props {
   className?: string;
 }
 
 // TODO: FIXME
-const fonts = ['Lobster', 'Oswald', 'Raleway'];
+const fonts = ['Lobster', 'Oswald', 'Raleway'].map((name) => ({ value: name, text: name }));
 
 const FontSelector: FC<Props> = ({
   className,
-}) => {
-  const { updateConfig, userStyles } = useUserStylesStore();
-
-  return (
-    <select {...{
-      className,
-      value: userStyles.font,
-      onChange: (e) => {
-        updateConfig('font', e.target.value);
-      },
-    }}>
-      {
-        fonts.map((font) => (
-          <option {...{
-            key: font,
-            value: font,
-          }}>
-            {font}
-          </option>
-        ))
-      }
-    </select>
-  );
-};
+}) => (
+  <Dropdown {...{
+    className,
+    items: fonts,
+    defaultSelected: fonts[0],
+    onChange: (selectedFont) => {
+      console.log(selectedFont);
+    },
+  }} />
+);
 
 export default memo(FontSelector);

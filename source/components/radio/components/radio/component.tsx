@@ -15,13 +15,14 @@ const Radio: FC<Props> = ({
   disabled,
   selected,
   onClick,
+  size = 's',
 }) => (
   <button {...{
     className,
     disabled,
     role: 'radio',
     type: 'button',
-    css: styles.radio(selected),
+    css: styles.radio(size, selected),
     onClick: (e) => {
       e.preventDefault();
       e.stopPropagation();

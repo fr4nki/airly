@@ -1,7 +1,7 @@
 import { FC, memo } from 'react';
 import { useIntl } from 'react-intl';
 
-import Range from '@/components/range';
+import Slider from '@/components/slider';
 
 import { useUserStylesStore } from '@/stores/userStyles';
 
@@ -29,10 +29,10 @@ const GapSelector: FC<Props> = ({
         px
       </p>
 
-      <Range {...{
+      <Slider {...{
         min: 2,
         max: 100,
-        step: 2,
+        css: styles.sliderTemp,
         defaultValue: userStyles.gap,
         debounceTimeout: 100,
         onChange: (value) => {

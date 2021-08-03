@@ -1,6 +1,9 @@
 import { FC, memo } from 'react';
 import { useIntl } from 'react-intl';
 
+import Switch from '@/components/switch';
+import Label from '@/components/label';
+
 import { useSettingsStore } from '@/stores/settings';
 
 import * as styles from './styles';
@@ -20,20 +23,17 @@ const PreviewContentSettingsToggleLiner: FC<Props> = ({
       className,
       css: styles.toggleLiner,
     }}>
-      <button {...{
-        type: 'button',
-        onClick: (e) => {
-          e.preventDefault();
-
-          updateSettings('linerVisible', !settings.linerVisible);
-        },
+      <Label {...{
+        text: String(intl.messages['pages.index.preview.toggleLiner.labelLayoutRule']),
+        textPosition: 'left',
       }}>
-        {
-          settings.linerVisible
-            ? intl.messages['pages.index.preview.toggleLiner.buttonHideLinerText']
-            : intl.messages['pages.index.preview.toggleLiner.buttonShowLinerText']
-        }
-      </button>
+        <Switch {...{
+          defaultChecked: settings.linerVisible,
+          onChange: (isChecked) => {
+            updateSettings('linerVisible', isChecked);
+          },
+        }} />
+      </Label>
     </div>
   );
 };

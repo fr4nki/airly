@@ -11,14 +11,13 @@ export const global = css`
   html {
     height: 100%;
     width: 100%;
-    background: ${theme.colors.default};
   }
 
   body {
     margin: 0;
     width: 100%;
-    background: ${theme.colors.background};
-    color: ${theme.colors.default};
+    background: ${theme.colors.background.default};
+    color: ${theme.colors.font.default};
     height: auto;
     min-height: 100%;
     display: flex;

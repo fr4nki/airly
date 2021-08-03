@@ -1,9 +1,11 @@
 import { FC, memo, useMemo } from 'react';
 import { nanoid } from 'nanoid';
 
-import * as styles from './styles';
+import Divider from '@/components/divider/component';
 
 import { SEPARATOR_LINE_THICKNESS } from './constants';
+
+import * as styles from './styles';
 
 interface Props {
   className?: string;
@@ -32,10 +34,10 @@ const Liner: FC<Props> = ({
     }}>
       {
         lines.map((key) => (
-          <span {...{
+          <Divider {...{
             key,
-            css: styles.linerLine(SEPARATOR_LINE_THICKNESS),
-            style: { marginTop: step },
+            css: styles.linerLine(step),
+            thickness: SEPARATOR_LINE_THICKNESS,
           }} />
         ))
       }

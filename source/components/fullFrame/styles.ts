@@ -1,8 +1,10 @@
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 
-export const fullFrame = css`
+import { AppTheme } from '@/providers/theme';
+
+export const fullFrame = (theme: AppTheme): SerializedStyles => css`
   height: 100vh;
-  background-color: purple;
+  background-color: ${theme.colors.background.default};
   max-height: 100vh;
   overflow: hidden;
 

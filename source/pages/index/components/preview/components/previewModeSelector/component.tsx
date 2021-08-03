@@ -32,11 +32,13 @@ const PreviewModeSelector: FC<Props> = ({
       <Radio {...{
         content: String(intl.messages['pages.index.preview.previewModeSelector.viewButton']),
         value: PreviewMode.view,
+        size: 'm',
       }} />
 
       <Radio {...{
         content: String(intl.messages['pages.index.preview.previewModeSelector.editButton']),
         value: PreviewMode.edit,
+        size: 'm',
       }} />
     </RadioGroup>
   );

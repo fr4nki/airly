@@ -1,9 +1,12 @@
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 
-export const configMenu = css`
+import { AppTheme } from '@/providers/theme';
+
+export const configMenu = (theme: AppTheme): SerializedStyles => css`
   max-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: ${theme.colors.background.graySoft};
 `;
 
 export const configMenuUpper = css`

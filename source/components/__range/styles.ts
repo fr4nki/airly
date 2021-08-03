@@ -1,6 +1,7 @@
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
+import { AppTheme } from '@/providers/theme';
 
-export const range = css`
+export const range = (theme: AppTheme): SerializedStyles => css`
   width: 100%;
   position: relative;
   appearance: none;
@@ -17,11 +18,11 @@ export const range = css`
     width: 100%;
     height: 6px;
     cursor: default;
-    background: yellow;
+    background: ${theme.colors.accent.default};
     border-radius: 1000px;
   }
   &:focus::-webkit-slider-runnable-track {
-    background: yellow;
+    background: ${theme.colors.accent.default};
   }
 
   // Thumb

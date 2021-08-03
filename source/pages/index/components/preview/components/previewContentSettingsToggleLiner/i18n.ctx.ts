@@ -1,10 +1,8 @@
 export default {
   en: {
-    'pages.index.preview.toggleLiner.buttonShowLinerText': 'Show lines',
-    'pages.index.preview.toggleLiner.buttonHideLinerText': 'Hide lines',
+    'pages.index.preview.toggleLiner.labelLayoutRule': 'Layout lines',
   },
   ru: {
-    'pages.index.preview.toggleLiner.buttonShowLinerText': 'Показать линии',
-    'pages.index.preview.toggleLiner.buttonHideLinerText': 'Скрыть линии',
+    'pages.index.preview.toggleLiner.labelLayoutRule': 'Линии раскладки',
   },
 };
