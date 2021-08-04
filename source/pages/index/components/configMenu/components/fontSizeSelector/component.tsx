@@ -1,8 +1,13 @@
 import { FC, memo } from 'react';
+import { useIntl } from 'react-intl';
 
 import Radio, { RadioGroup } from '@/components/radio';
+import MenuItemName from '@/components/menuItemName';
+import { FontSizesIcon } from '@/components/icons';
 
 import { useUserStylesStore } from '@/stores/userStyles';
+
+import * as styles from './styles';
 
 interface Props {
   className?: string;
@@ -11,29 +16,39 @@ interface Props {
 const FontSizeSelector: FC<Props> = ({
   className,
 }) => {
+  const intl = useIntl();
   const { userStyles, updateConfig } = useUserStylesStore();
 
   return (
-    <RadioGroup {...{
-      className,
-      defaultSelected: userStyles.fontSize,
-      onChange: (value) => {
-        updateConfig('fontSize', value);
-      },
+    <div {...{
+      css: styles.fontSizeSelector,
     }}>
-      <Radio {...{
-        content: 'Small',
-        value: 'small',
+      <MenuItemName {...{
+        icon: <FontSizesIcon />,
+        text: intl.messages['pages.index.fontSizeSelector.label'].toString(),
       }} />
-      <Radio {...{
-        content: 'Medium',
-        value: 'medium',
-      }} />
-      <Radio {...{
-        content: 'Big',
-        value: 'big',
-      }} />
-    </RadioGroup>
+
+      <RadioGroup {...{
+        className,
+        defaultSelected: userStyles.fontSize,
+        onChange: (value) => {
+          updateConfig('fontSize', value);
+        },
+      }}>
+        <Radio {...{
+          content: 'Small',
+          value: 'small',
+        }} />
+        <Radio {...{
+          content: 'Medium',
+          value: 'medium',
+        }} />
+        <Radio {...{
+          content: 'Big',
+          value: 'big',
+        }} />
+      </RadioGroup>
+    </div>
   );
 };
 

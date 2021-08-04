@@ -1,6 +1,8 @@
 import { FC, memo } from 'react';
 import { useIntl } from 'react-intl';
 
+import MenuItemName from '@/components/menuItemName';
+import { GapSelectorIcon } from '@/components/icons';
 import Slider from '@/components/slider';
 
 import { useUserStylesStore } from '@/stores/userStyles';
@@ -22,17 +24,26 @@ const GapSelector: FC<Props> = ({
       className,
       css: styles.gapSelector,
     }}>
-      <p>
-        {intl.messages['pages.index.gapSelector.label'].toString()}
-        {': '}
-        {userStyles.gap}
-        px
-      </p>
+      <div {...{
+        css: styles.gapSelectorTitle,
+      }}>
+        <MenuItemName {...{
+          icon: <GapSelectorIcon />,
+          text: intl.messages['pages.index.gapSelector.label'].toString(),
+        }} />
+
+        <p {...{
+          css: styles.gapSelectorTitleValue,
+        }}>
+          {userStyles.gap}
+          px
+        </p>
+      </div>
 
       <Slider {...{
         min: 2,
         max: 100,
-        css: styles.sliderTemp,
+        css: styles.slider,
         defaultValue: userStyles.gap,
         debounceTimeout: 100,
         onChange: (value) => {

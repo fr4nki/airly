@@ -39,6 +39,7 @@ export const sliderTrack = css`
 `;
 
 export const sliderTrackActive = (percentage: number) => (theme: AppTheme): SerializedStyles => css`
+  border-radius: 1000px;
   position: absolute;
   height: ${theme.gaps.default}px;
   top: 0;
@@ -50,8 +51,8 @@ export const sliderTrackActive = (percentage: number) => (theme: AppTheme): Seri
 `;
 
 export const sliderTrackInactive = (theme: AppTheme): SerializedStyles => css`
-  // background-color: ${theme.colors.background.gray};
-  background-color: magenta;
+  border-radius: 1000px;
+  background-color: ${theme.colors.background.gray};
   height: ${theme.gaps.default}px;
   width: 100%;
   transform: translateY(${(thumbSize - theme.gaps.default) / 2}px);

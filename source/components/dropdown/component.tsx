@@ -1,6 +1,5 @@
 import {
   FC,
-  isValidElement,
   memo,
   ReactNode,
   useCallback,
@@ -74,15 +73,11 @@ const Dropdown: FC<Props> = ({
       }}>
         {
           prefix && (
-            isValidElement(prefix)
-              ? prefix
-              : (
-                <span {...{
-                  css: styles.dropdownSelectedPrefix,
-                }}>
-                  {prefix}
-                </span>
-              )
+            <span {...{
+              css: styles.dropdownSelectedPrefix,
+            }}>
+              {prefix}
+            </span>
           )
         }
 

@@ -1,8 +1,8 @@
 export default {
   en: {
-    'pages.index.gapSelector.label': 'Gap size',
+    'pages.index.gapSelector.label': 'Spacing',
   },
   ru: {
-    'pages.index.gapSelector.label': 'Размер отступа',
+    'pages.index.gapSelector.label': 'Отступ',
   },
 };

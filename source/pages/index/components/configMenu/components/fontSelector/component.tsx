@@ -1,6 +1,8 @@
 import { FC, memo } from 'react';
 
 import Dropdown from '@/components/dropdown';
+import MenuItem from '@/components/menuItemName';
+import { FontSelectorIcon } from '@/components/icons';
 
 interface Props {
   className?: string;
@@ -15,6 +17,11 @@ const FontSelector: FC<Props> = ({
   <Dropdown {...{
     className,
     items: fonts,
+    prefix: (
+      <MenuItem {...{
+        icon: <FontSelectorIcon />,
+      }} />
+    ),
     defaultSelected: fonts[0],
     onChange: (selectedFont) => {
       console.log(selectedFont);
