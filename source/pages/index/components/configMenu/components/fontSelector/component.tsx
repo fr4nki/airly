@@ -1,8 +1,9 @@
 import { FC, memo } from 'react';
 
 import Dropdown from '@/components/dropdown';
-import MenuItem from '@/components/menuItemName';
 import { FontSelectorIcon } from '@/components/icons';
+
+import MenuItemName from '../menuItemName';
 
 interface Props {
   className?: string;
@@ -18,7 +19,7 @@ const FontSelector: FC<Props> = ({
     className,
     items: fonts,
     prefix: (
-      <MenuItem {...{
+      <MenuItemName {...{
         icon: <FontSelectorIcon />,
       }} />
     ),

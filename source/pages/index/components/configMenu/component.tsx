@@ -4,6 +4,7 @@ import GapSelector from './components/gapSelector';
 import DownloadBlock from './components/downloadBlock';
 import FontSelector from './components/fontSelector';
 import FontSizeSelector from './components/fontSizeSelector';
+import ColorThemeSelector from './components/colorThemeSelector';
 
 import * as styles from './styles';
 
@@ -24,6 +25,7 @@ const ConfigMenu: FC<Props> = ({
       <GapSelector />
       <FontSelector />
       <FontSizeSelector />
+      <ColorThemeSelector />
     </div>
 
     <div {...{

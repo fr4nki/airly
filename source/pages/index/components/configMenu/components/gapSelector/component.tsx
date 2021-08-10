@@ -1,11 +1,12 @@
 import { FC, memo } from 'react';
 import { useIntl } from 'react-intl';
 
-import MenuItemName from '@/components/menuItemName';
 import { GapSelectorIcon } from '@/components/icons';
 import Slider from '@/components/slider';
 
 import { useUserStylesStore } from '@/stores/userStyles';
+
+import MenuItemName from '../menuItemName';
 
 import * as styles from './styles';
 

@@ -9,6 +9,10 @@ export const pageIndex = css`
 export const pageIndexPreview = css`
   width: 75%;
   overflow-y: auto;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const pageIndexConfig = css`

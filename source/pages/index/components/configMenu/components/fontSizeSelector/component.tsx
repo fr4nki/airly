@@ -2,10 +2,11 @@ import { FC, memo } from 'react';
 import { useIntl } from 'react-intl';
 
 import Radio, { RadioGroup } from '@/components/radio';
-import MenuItemName from '@/components/menuItemName';
 import { FontSizesIcon } from '@/components/icons';
 
 import { useUserStylesStore } from '@/stores/userStyles';
+
+import MenuItemName from '../menuItemName';
 
 import * as styles from './styles';
 
